@@ -76,7 +76,7 @@ def train():
     joblib.dump(model_columns, model_columns_file_name)
 
     global clf
-    clf = rf()
+    clf = rf(n_estimators=100)
     start = time.time()
     clf.fit(x, y)
     print('Trained in %.1f seconds' % (time.time() - start))
